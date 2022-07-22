@@ -1,0 +1,20 @@
+@use "../mix";
+@use "../var";
+
+header {
+	@include mix.flex();
+	border-bottom: 0.5rem double var.$white;
+	width: 100vw;
+	gap: 1rem;
+
+	background-color: var.$em;
+	color: var.$white;
+
+	font-family: var.$titan;
+	font-weight: 700;
+	letter-spacing: 1px;
+
+	&>img {
+		@include mix.box(2rem);
+	}
+}

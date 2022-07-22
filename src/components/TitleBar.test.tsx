@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import NavBar from "./NavBar";
+import NavBar from "./TitleBar";
 
-describe("Navigation bar component", () => {
+describe("Title bar component", () => {
 	test("snapshot", () => {
 		const { container } = render(<NavBar />);
 		expect(container).toMatchSnapshot();

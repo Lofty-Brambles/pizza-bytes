@@ -1,4 +1,6 @@
 @use "styles/mix";
-@use "styles/var";
 
-.App {}
+.App {
+	@include mix.flex(column, flex-start);
+	height: 100vh;
+}
