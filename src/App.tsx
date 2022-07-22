@@ -1,14 +1,13 @@
 import React from "react";
 import "./App.scss";
 import { Home, Menu, ShoppingBag } from "react-feather";
-import { Outlet } from "react-router-dom";
 import page from "./interfaces";
 
-import Homepg from "./pages/Homepg";
 import FootBar from "./components/FootBar";
+import Routing from "./Routing";
 import TitleBar from "./components/TitleBar";
 
-import Routing from "./Routing";
+import Homepg from "./pages/Homepg";
 import Menupg from "./pages/Menupg";
 import Cartpg from "./pages/Cartpg";
 
@@ -36,9 +35,8 @@ const dtls: Array<page> = [
 const App = () => (
 	<div className="App">
 		<TitleBar />
-		<Routing pages={dtls} />
 		<main>
-			<Outlet />
+			<Routing pages={dtls} />
 		</main>
 		<FootBar pages={dtls} />
 	</div>

@@ -7,7 +7,7 @@ type Props = {
 	pages: Array<page>;
 };
 
-const FootBar: React.FC<Props> = ({ pages }) => (
+const FootBar = ({ pages }: Props) => (
 	<footer data-testid="footer">
 		{pages.map(ele => (
 			<NavLink to={ele.path} key={ele.path}>

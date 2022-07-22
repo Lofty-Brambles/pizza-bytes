@@ -6,12 +6,11 @@ type Props = {
 	pages: Array<page>;
 };
 
-const Routing: React.FC<Props> = ({ pages }) => (
+const Routing = ({ pages }: Props) => (
 	<Routes>
 		{pages.map(ele => (
 			<Route key={ele.path} path={ele.path} element={ele.component} />
 		))}
-		<Route path="*" element="" />
 	</Routes>
 );
 
