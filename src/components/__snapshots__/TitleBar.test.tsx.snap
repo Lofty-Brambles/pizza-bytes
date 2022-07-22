@@ -1,0 +1,15 @@
+// Vitest Snapshot v1
+
+exports[`Title bar component > snapshot 1`] = `
+<div>
+  <header>
+    <img
+      alt="logo"
+      src="./pizza-logo.png"
+    />
+    <h2>
+      Pizza-Bytes!
+    </h2>
+  </header>
+</div>
+`;

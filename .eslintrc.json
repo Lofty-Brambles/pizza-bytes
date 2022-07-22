@@ -23,6 +23,12 @@
 			{ "js": "never", "ts": "never", "tsx": "never" }
 		],
 		"import/no-extraneous-dependencies": "off",
+		"react/function-component-definition": [
+			2,
+			{
+			  "namedComponents": ["function-declaration", "arrow-function"]
+			}
+		  ],
 
 		"init-declarations": ["error", "always"],
 		"no-console": "warn",

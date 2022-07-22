@@ -1,6 +1,14 @@
 @use "styles/mix";
 
+html {
+	overflow: hidden;
+}
+
 .App {
 	@include mix.flex(column, flex-start);
 	height: 100vh;
+
+	& main {
+		flex-grow: 1;
+	}
 }
