@@ -1,3 +1,5 @@
+@use "./var";
+
 @mixin flex($dir: row, $just-cont: center, $alg-it: center, $wrp: nowrap) {
 	display: flex;
 	flex-flow: $dir $wrp;
@@ -15,26 +17,120 @@
 		-1px -1px 0px $col;
 }
 
+@mixin addpad($size: 1) {
+	box-sizing: border-box;
+	padding: $size*2.5rem;
+
+	@media (max-width: 350px) {
+		padding: $size*0.25rem;
+	}
+
+	@media (max-width: 600px) {
+		padding: $size*0.5rem;
+	}
+
+	@media (max-width: 900px) {
+		padding: $size*1rem;
+	}
+
+	@media (max-width: 1200px) {
+		padding: $size*2rem;
+	}
+}
+
+@mixin addbrad($size: 1) {
+	border-radius: $size*2.5rem;
+
+	@media (max-width: 350px) {
+		border-radius: $size*0.25rem;
+	}
+
+	@media (max-width: 600px) {
+		border-radius: $size*0.5rem;
+	}
+
+	@media (max-width: 900px) {
+		border-radius: $size*1rem;
+	}
+
+	@media (max-width: 1200px) {
+		border-radius: $size*2rem;
+	}
+}
+
 @mixin gradient($start-color, $end-color, $orientation) {
 	background: $start-color;
 
-	@if $orientation == "vertical" {
+	@if $orientation =="vertical" {
 		background: -webkit-linear-gradient(top, $start-color, $end-color);
 		background: linear-gradient(to bottom, $start-color, $end-color);
-	} @else if $orientation == "horizontal" {
+	}
+
+	@else if $orientation =="horizontal" {
 		background: -webkit-linear-gradient(left, $start-color, $end-color);
 		background: linear-gradient(to right, $start-color, $end-color);
-	} @else {
-		background: -webkit-radial-gradient(
-			center,
-			ellipse cover,
-			$start-color,
-			$end-color
-		);
-		background: radial-gradient(
-			ellipse at center,
-			$start-color,
-			$end-color
-		);
+	}
+
+	@else {
+		background: -webkit-radial-gradient(center,
+				ellipse cover,
+				$start-color,
+				$end-color);
+		background: radial-gradient(ellipse at center,
+				$start-color,
+				$end-color);
+	}
+}
+
+@mixin buttond {
+	box-sizing: border-box;
+	max-width: 460px;
+	padding: 0.75rem 1.65rem;
+
+	@include flex();
+	position: relative;
+	background-color: var.$cyan;
+	border: 0 solid var.$white;
+
+	color: var.$black;
+	font-family: var.$fedora;
+	font-size: 1rem;
+	font-weight: 700;
+
+	text-align: center;
+	text-decoration: none;
+	text-decoration-thickness: auto;
+
+	transform: rotate(-2deg);
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+
+	&:focus {
+		outline: 0;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+
+		border: 2px solid var.$white;
+		bottom: 5px;
+		left: 5px;
+		width: calc(100% - 2px);
+		height: calc(100% - 2px);
+	}
+
+	&:hover:after {
+		bottom: 2px;
+		left: 2px;
+	}
+
+	@media (max-width: 768px) {
+		& {
+			padding: .75rem 2rem;
+			font-size: 1.25rem;
+		}
 	}
 }

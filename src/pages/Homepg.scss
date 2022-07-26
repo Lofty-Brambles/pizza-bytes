@@ -1,0 +1,104 @@
+@use "../styles/mix";
+@use "../styles/var";
+
+main {
+	@include mix.box(100%);
+	background-image: url(./Homebg.jpg);
+	background-size: cover;
+	background-position: center;
+
+	@include mix.addpad();
+	overflow-y: scroll;
+	flex-grow: 1;
+}
+
+main>div {
+	@include mix.addpad();
+	@include mix.addbrad();
+	@include mix.gradient(rgba(var.$black, 0.9),
+		rgba(var.$black, 0.7),
+		vertical);
+	@include mix.flex(column);
+	height: 50%;
+	gap: 2rem;
+
+	h1 {
+		margin: 0;
+
+		font-family: var.$titan;
+		text-align: center;
+		color: var.$white;
+		letter-spacing: 1px;
+	}
+
+	button {
+		@include mix.buttond();
+	}
+
+	& div#space {
+		width: 100%;
+		gap: 1.5rem;
+		@include mix.flex(row, space-evenly);
+
+		@media (max-width: 750px) {
+			@include mix.flex(column, space-evenly);
+		}
+	}
+
+	& a,
+	& img {
+		@include mix.box(2.2rem);
+		transition: transform 0.5s ease-in-out;
+
+		&:hover {
+			transform: scale(1.1) rotate(180deg);
+		}
+	}
+
+	& p {
+		font-family: var.$flower;
+		font-size: 1.25rem;
+		color: var.$white;
+		letter-spacing: 0.5px;
+
+		position: relative;
+		margin: 0;
+
+		&::after, &::before {
+			content: "";
+			position: absolute;
+			height: 2px;
+			background-color: var.$white;
+
+			width: 2.5rem;
+			@media (max-width: 750px) {
+				width: 0.5rem;
+			}
+		}
+
+		&::after {
+			top: 50%;
+			right: -3.25rem;
+			@media (max-width: 750px) {
+				right: -1rem;
+			}
+		}
+
+		&::before {
+			top: 50%;
+			left: -3.25rem;
+			@media (max-width: 750px) {
+				left: -1rem;
+			}
+		}
+	}
+
+	& div#left {
+		@include mix.flex();
+		gap: 4rem;
+
+		@media (max-width: 750px) {
+			gap: 1.5rem;
+		}
+	}
+}
