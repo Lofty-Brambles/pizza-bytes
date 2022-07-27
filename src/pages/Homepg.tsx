@@ -3,6 +3,7 @@ import "./Homepg.scss";
 
 import DiscordLogo from "../assets/discord.webp";
 import GithubLogo from "../assets/github.png";
+import { Link } from "react-router-dom";
 
 export default function Homepg() {
 	return (
@@ -10,7 +11,7 @@ export default function Homepg() {
 			<div>
 				<div id="space">
 					<h1>Hungry? Grab a slice!</h1>
-					<button type="button">Click to order!</button>
+					<Link to="/menu"><button type="button">Click to order!</button></Link>
 				</div>
 				<div id="left">
 					<a id="cont" href="https://discord.com/users/740094143379800156">
