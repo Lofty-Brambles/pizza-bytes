@@ -1,0 +1,30 @@
+@use "../styles/mix";
+@use "../styles/var";
+
+main {
+	@include mix.box(100%);
+	background-image: url(./Homebg.jpg);
+	background-size: cover;
+	background-position: center;
+
+	@include mix.addpad();
+	overflow-y: scroll;
+	flex-grow: 1;
+
+	display: flex !important;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 2rem;
+
+	h3 {
+		margin: 0;
+		font-family: var.$fedora;
+		color: var.$white;
+		@include mix.shadow(var.$black);
+	}
+
+	a {
+		color: var.$em;
+	}
+}

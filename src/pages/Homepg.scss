@@ -45,8 +45,8 @@ main>div {
 		}
 	}
 
-	& a,
-	& img {
+	& a#cont,
+	& img#cont {
 		@include mix.box(2.2rem);
 		transition: transform 0.5s ease-in-out;
 
@@ -55,7 +55,7 @@ main>div {
 		}
 	}
 
-	& p {
+	& p#p {
 		font-family: var.$flower;
 		font-size: 1.25rem;
 		color: var.$white;

@@ -13,12 +13,12 @@ export default function Homepg() {
 					<button type="button">Click to order!</button>
 				</div>
 				<div id="left">
-					<a href="https://discord.com/users/740094143379800156">
-						<img src={DiscordLogo} alt="Discord" />
+					<a id="cont" href="https://discord.com/users/740094143379800156">
+						<img id="cont" src={DiscordLogo} alt="Discord" />
 					</a>
-					<p>Reach out to us!</p>
-					<a href="https://github.com/Lofty-Brambles/restuarant-page">
-						<img src={GithubLogo} alt="Github" />
+					<p id="p">Reach out to us!</p>
+					<a id="cont" href="https://github.com/Lofty-Brambles/restuarant-page">
+						<img id="cont" src={GithubLogo} alt="Github" />
 					</a>
 				</div>
 			</div>

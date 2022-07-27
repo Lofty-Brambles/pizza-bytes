@@ -1,0 +1,39 @@
+@use "../mix";
+@use "../var";
+
+.modal-div {
+	@include mix.box(100vw, 100vh);
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	border-radius: 0;
+	background-color: rgba( var.$black, 0.7 );
+
+	& .modal {
+		@include mix.flex(column, space-between);
+		@include mix.box(20rem, fit-content);
+		min-height: 40vh;
+		background-color: rgba( var.$white, 0.7 );
+		border-radius: 3rem;
+
+		& #body {
+			flex-grow: 1;
+			padding: 2rem;
+
+			& p {
+				font-family: var.$flower;
+				font-weight: 600;
+			}
+		}
+
+		& footer {
+			width: 100%;
+			border-radius: 0 0 3rem 3rem;
+
+			& button {
+				margin: 0.5rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+@use "../mix";
+
+div#menu-wrap {
+	@include mix.flex(row, center, center, wrap);
+	@include mix.box(80vw, fit-content);
+}

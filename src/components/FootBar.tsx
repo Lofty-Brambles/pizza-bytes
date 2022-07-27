@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import page from "../interfaces";
+import { page } from "../interfaces";
 import "../styles/components/FootBar.scss";
 
 type Props = {

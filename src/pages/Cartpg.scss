@@ -1,0 +1,40 @@
+@use "../styles/mix";
+@use "../styles/var";
+
+main {
+	&>div {
+		height: fit-content;
+	}
+
+	& div#cart-top {
+		@include mix.flex(row, space-between);
+		gap: 25vw;
+
+		& h3:first-child {
+			position: relative;
+		}
+
+		& h3:first-child::after {
+			content: "";
+			width: calc(25vw - 1rem);
+			height: 2px;
+			background-color: var.$white;
+
+			position: absolute;
+			top: 50%;
+			right: calc(0.5rem - 25vw);
+		}
+	}
+
+	& div#warn {
+		text-align: center;
+		color: var.$white;
+
+		font-family: var.$flower;
+		font-weight: 500;
+	}
+
+	& a {
+		text-decoration: none;
+	}
+}
