@@ -13,7 +13,7 @@ export default function Modal() {
 	return (
 		<div className="modal-div">
 			<div className="modal">
-				<img src={comp?.picture} alt={comp?.name} />
+				<img src={`../${comp?.picture}`} alt={comp?.name} />
 				<div id="body">
 					<h3>{comp?.name}</h3>
 					<p>{comp?.desc}</p>
